@@ -1,0 +1,34 @@
+<config>
+    <application>
+        <bbdisp>localhost</bbdisp>
+        <bbport>1985</bbport>
+        <bb>/export/home/hobbit/client/bin/bb</bb>
+    </application>
+
+    <arrays>
+        <array>
+            <name>antares</name>
+            <ip>192.168.1.2</ip>
+            <user>admin</user>
+            <password>passw0rd</password>
+            <type>YB-16S3EF8</type>
+        </array>
+
+        <array>
+            <name>canopus</name>
+            <ip>192.168.1.3</ip>
+            <user>admin</user>
+            <password>p@ssw0rd</password>
+            <type>Y3-16S6SF8p</type>
+        </array>
+
+        <array>
+            <name>pluton</name>
+            <ip>192.168.1.4</ip>
+            <user>admin</user>
+            <password>passw0rd01</password>
+            <type>Y3-24S6DF8</type>
+        </array>
+
+    </arrays>
+</config>
