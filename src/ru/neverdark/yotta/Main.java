@@ -36,7 +36,7 @@ public class Main {
         YottaParser parser = new YottaParser();
         parser.parseAll(configFile);
 
-        Xymon xymonClient = new Xymon(configFile);
+        Xymon xymonClient = new Xymon();
         xymonClient.run(parser);
 
     }

@@ -23,17 +23,10 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-import ru.neverdark.yotta.parser.Config;
 import ru.neverdark.yotta.parser.YottaParser;
 import ru.neverdark.yotta.parser.YottaParser.Disk;
 
 public class Xymon {
-
-    private String mConfigFile;
-
-    public Xymon(String configFile) {
-        mConfigFile = configFile;
-    }
 
     private String executeShellCommand(String command) {
         String[] cmd = { "/bin/bash", "-c", command };
@@ -97,11 +90,9 @@ public class Xymon {
 
     private void sendData(String html, String machine, String color)
             throws ParserConfigurationException, SAXException, IOException {
-        String bb = Config.getInstance(mConfigFile).getApplicationConfig().getBb();
-        String bbdisp = Config.getInstance(mConfigFile).getApplicationConfig().getBbdisp();
         String command = String.format(
-                "%s %s \"status %s.disk_status %s `date` Disk status <br><br><br> %s\"", bb,
-                bbdisp, machine, color, html);
+                "$BB $BBDISP \"status %s.disk_status %s `date` Disk status <br><br><br> %s\"",
+                machine, color, html);
         executeShellCommand(command);
     }
 
